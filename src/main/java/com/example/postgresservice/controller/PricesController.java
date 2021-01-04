@@ -19,12 +19,21 @@ public class PricesController {
     public void fillDB(){
         if (pricesRepository.count()==0){
             pricesRepository.save(new Prices(620,1.63,1.99,1.43,22.79));
+            pricesRepository.save(new Prices(1145360, 16.79, 19.99, 15.59, 187.19));
+            pricesRepository.save(new Prices(427520, 25, 30, 21, 250));
+            pricesRepository.save(new Prices(292030, 8.99, 11.99, 7.49, 104.99));
+            pricesRepository.save(new Prices(105600, 4.99, 4.99, 3.49, 54.99));
         }
     }
 
     @GetMapping("/prices")
     public List<Prices> getPrices() {
         return pricesRepository.findAll();
+    }
+
+    @GetMapping("/prices/{appId}")
+    public Prices getPricesByAppId(@PathVariable Integer appId){
+        return pricesRepository.findPricesByAppId(appId);
     }
 
     @PostMapping("/prices")
