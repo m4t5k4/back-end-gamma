@@ -25,3 +25,7 @@ TABLE prices;
 De microservice zal de default database gebruiken
 
 spring.datasource.url=jdbc:postgresql://localhost:5432/postgres
+
+## Deployment
+
+kubectl apply -f secrets.yaml

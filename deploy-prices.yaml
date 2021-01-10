@@ -66,8 +66,11 @@ spec:
             cpu: 0.2
             memory: "200Mi"
         env:                    # Environment variables supplied to the Pod
-        - name: MYSQL_ROOT_PASSWORD
-          value: "abc123"
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: secrets-prices
+              key: password
 ---
 apiVersion: v1                   # API version
 kind: Service                    # Type of the kubernetes resource
