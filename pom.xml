@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>postgres-service</artifactId>
+	<artifactId>back-end-gamma</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>postgres-service</name>
 	<description>back-end w/ postgres</description>

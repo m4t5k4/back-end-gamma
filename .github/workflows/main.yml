@@ -57,13 +57,13 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: postgres-service-artifact.jar
-          path: ./target/postgres-service-0.0.1-SNAPSHOT.jar
+          path: ./target/back-end-gamma-0.0.1-SNAPSHOT.jar
 
       - name: Docker login
         run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Docker build
-        run: docker build -t ${{ secrets.DOCKER_USER }}/postgres-service:latest .
+        run: docker build -t ${{ secrets.DOCKER_USER }}/back-end-gamma:latest .
 
       - name: Upload container to Docker Hub
-        run: docker push ${{ secrets.DOCKER_USER }}/postgres-service:latest
+        run: docker push ${{ secrets.DOCKER_USER }}/back-end-gamma:latest
